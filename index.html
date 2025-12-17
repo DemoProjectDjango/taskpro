@@ -23,15 +23,16 @@
                     },
                     colors: {
                         cosmic: {
-                            bg: '#0B0A16',       // Deep Violet/Black
-                            surface: '#151326',  // Lighter Violet
-                            primary: '#8B5CF6',  // Purple
-                            accent: '#EC4899',   // Pink
-                            highlight: '#F472B6' // Light Pink
+                            bg: '#0B0A16',       
+                            surface: '#151326',  
+                            primary: '#3B82F6',  
+                            accent: '#0EA5E9',   
+                            highlight: '#38BDF8' 
                         }
                     },
                     backgroundImage: {
-                        'holo-gradient': "linear-gradient(135deg, #8B5CF6 0%, #EC4899 50%, #F59E0B 100%)",
+                        // Gradient updated: Blue -> Sky Blue -> Light Green (Lime)
+                        'holo-gradient': "linear-gradient(135deg, #3B82F6 0%, #0EA5E9 50%, #84CC16 100%)",
                         'glass': "linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%)"
                     }
                 }
@@ -42,13 +43,14 @@
     <style>
         body {
             background-color: #0B0A16;
-            color: #E9D5FF;
+            color: #E9D5FF; 
             overflow-x: hidden;
         }
 
         /* --- Holographic Text --- */
         .text-holo {
-            background: linear-gradient(to right, #C084FC, #E879F9, #FDBA74);
+            /* Blue -> Sky -> Light Green (Lime-300) */
+            background: linear-gradient(to right, #60A5FA, #38BDF8, #BEF264);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-size: 200% auto;
@@ -61,10 +63,10 @@
             font-size: 15rem;
             line-height: 0.8;
             font-weight: 900;
-            background: linear-gradient(180deg, #FFFFFF 0%, #8B5CF6 100%);
+            background: linear-gradient(180deg, #FFFFFF 0%, #3B82F6 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            filter: drop-shadow(0 0 50px rgba(139, 92, 246, 0.4));
+            filter: drop-shadow(0 0 50px rgba(59, 130, 246, 0.4));
             transform: perspective(1000px) rotateY(-10deg) rotateX(5deg);
         }
 
@@ -84,7 +86,7 @@
         /* Sticky State for Widget Strip */
         .widget-strip-sticky {
             position: fixed;
-            top: 6rem; /* Fits right under the h-24 navbar */
+            top: 6rem; 
             left: 0;
             width: 100%;
             z-index: 40;
@@ -94,12 +96,11 @@
             padding: 0.75rem 1rem !important;
             margin: 0 !important;
             max-width: 100% !important;
-            overflow-x: auto; /* Scroll horizontally on small screens */
-            flex-wrap: nowrap !important; /* Keep in one line */
+            overflow-x: auto; 
+            flex-wrap: nowrap !important; 
             justify-content: flex-start !important;
             animation: slideDown 0.3s ease-out;
             box-shadow: 0 4px 20px rgba(0,0,0,0.5);
-            /* Hide scrollbar */
             -ms-overflow-style: none;
             scrollbar-width: none;
         }
@@ -115,7 +116,6 @@
             .widget-strip-sticky { justify-content: center !important; }
         }
 
-        /* Adjust inner items when sticky */
         .widget-strip-sticky .widget-item {
             width: auto;
             min-width: 80px;
@@ -133,15 +133,14 @@
             font-size: 0.7rem;
         }
 
-
         .widget-icon-bg {
             background: linear-gradient(145deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
             box-shadow: 0 4px 15px rgba(0,0,0,0.2);
             transition: all 0.3s ease;
         }
         .widget-item:hover .widget-icon-bg {
-            background: linear-gradient(135deg, #8B5CF6, #EC4899);
-            box-shadow: 0 10px 25px rgba(236, 72, 153, 0.4);
+            background: linear-gradient(135deg, #3B82F6, #0EA5E9);
+            box-shadow: 0 10px 25px rgba(14, 165, 233, 0.4);
         }
 
         /* --- Blobs --- */
@@ -156,21 +155,21 @@
 
         /* --- Input Fields --- */
         .input-holo:focus {
-            outline: none; border-color: #EC4899; box-shadow: 0 0 0 4px rgba(236, 72, 153, 0.1);
+            outline: none; border-color: #0EA5E9; box-shadow: 0 0 0 4px rgba(14, 165, 233, 0.1);
         }
 
         /* --- Scrollbar --- */
         ::-webkit-scrollbar { width: 10px; }
         ::-webkit-scrollbar-track { background: #0B0A16; }
         ::-webkit-scrollbar-thumb { background: #2E2B4B; border-radius: 5px; }
-        ::-webkit-scrollbar-thumb:hover { background: #8B5CF6; }
+        ::-webkit-scrollbar-thumb:hover { background: #3B82F6; }
     </style>
 </head>
 <body class="antialiased font-sans" id="top">
 
     <div class="fixed inset-0 pointer-events-none z-0">
-        <div class="blob w-[500px] h-[500px] bg-purple-600 top-[-100px] left-[-100px]"></div>
-        <div class="blob w-[600px] h-[600px] bg-pink-600 bottom-[-100px] right-[-100px] animation-delay-2000"></div>
+        <div class="blob w-[500px] h-[500px] bg-blue-600 top-[-100px] left-[-100px]"></div>
+        <div class="blob w-[600px] h-[600px] bg-sky-600 bottom-[-100px] right-[-100px] animation-delay-2000"></div>
         <div class="blob w-[400px] h-[400px] bg-blue-600 top-[40%] left-[30%] opacity-20 animation-delay-4000"></div>
         <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-10"></div>
     </div>
@@ -182,7 +181,7 @@
                     <div class="w-10 h-10 rounded-full bg-holo-gradient flex items-center justify-center text-white shadow-lg">
                         <i class="fa-solid fa-infinity"></i>
                     </div>
-                    <span class="font-display text-2xl font-bold text-white tracking-tight">Track<span class="font-light text-purple-300">Lively</span></span>
+                    <span class="font-display text-2xl font-bold text-white tracking-tight">Track<span class="font-light text-blue-300">Lively</span></span>
                 </div>
                 
                 <div class="hidden lg:flex items-center gap-10">
@@ -190,21 +189,21 @@
                     <a href="#payments" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Payments</a>
                     <a href="#pricing" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Pricing</a>
                     
-                    <a href="#download-section" class="flex items-center gap-2 px-4 py-2 rounded-full border border-purple-500/30 hover:bg-purple-500/20 text-sm font-medium text-white transition-all group">
-                        <i class="fa-solid fa-download text-purple-400 group-hover:text-white transition-colors"></i>
+                    <a href="#download-section" class="flex items-center gap-2 px-4 py-2 rounded-full border border-blue-500/30 hover:bg-blue-500/20 text-sm font-medium text-white transition-all group">
+                        <i class="fa-solid fa-download text-blue-400 group-hover:text-white transition-colors"></i>
                         <span>Desktop App</span>
                     </a>
 
                     <div class="h-6 w-px bg-white/10"></div>
 
-                    <a href="#login" class="text-sm font-bold text-white hover:text-pink-400 transition-colors">Log In</a>
+                    <a href="#login" class="text-sm font-bold text-white hover:text-sky-400 transition-colors">Log In</a>
                     <a href="#signup" class="px-6 py-2.5 rounded-full bg-white/10 border border-white/10 text-white font-bold hover:bg-white hover:text-black transition-all">
                         Sign Up Free
                     </a>
                 </div>
 
                 <div class="lg:hidden flex items-center">
-                    <button id="mobile-menu-btn" class="text-white hover:text-purple-400 focus:outline-none transition-colors">
+                    <button id="mobile-menu-btn" class="text-white hover:text-blue-400 focus:outline-none transition-colors">
                         <i class="fa-solid fa-bars text-2xl"></i>
                     </button>
                 </div>
@@ -217,14 +216,14 @@
                 <a href="#payments" class="mobile-link text-lg font-medium text-gray-300 hover:text-white hover:pl-2 transition-all">Payments</a>
                 <a href="#pricing" class="mobile-link text-lg font-medium text-gray-300 hover:text-white hover:pl-2 transition-all">Pricing</a>
                 
-                <a href="#download-section" class="mobile-link flex items-center gap-2 text-lg font-medium text-purple-300 hover:text-white hover:pl-2 transition-all">
+                <a href="#download-section" class="mobile-link flex items-center gap-2 text-lg font-medium text-blue-300 hover:text-white hover:pl-2 transition-all">
                     <i class="fa-solid fa-download"></i> Desktop App
                 </a>
 
                 <div class="h-px w-full bg-white/10 my-2"></div>
 
-                <a href="#login" class="mobile-link text-lg font-bold text-white hover:text-pink-400 hover:pl-2 transition-all">Log In</a>
-                <a href="#signup" class="mobile-link text-center px-6 py-3 rounded-xl bg-holo-gradient text-white font-bold hover:shadow-[0_0_20px_rgba(236,72,153,0.4)] transition-all">
+                <a href="#login" class="mobile-link text-lg font-bold text-white hover:text-sky-400 hover:pl-2 transition-all">Log In</a>
+                <a href="#signup" class="mobile-link text-center px-6 py-3 rounded-xl bg-holo-gradient text-white font-bold hover:shadow-[0_0_20px_rgba(14,165,233,0.4)] transition-all">
                     Sign Up Free
                 </a>
             </div>
@@ -236,10 +235,10 @@
             <div data-aos="fade-up" data-aos-duration="1000">
                 <div class="inline-flex items-center gap-2 px-4 py-2 mb-8 rounded-full bg-white/5 border border-white/10 backdrop-blur-md">
                     <span class="flex h-2 w-2 relative">
-                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-pink-400 opacity-75"></span>
-                        <span class="relative inline-flex rounded-full h-2 w-2 bg-pink-500"></span>
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-sky-500"></span>
                     </span>
-                    <span class="text-xs font-bold tracking-wide text-pink-200 uppercase">System V2.0 Online</span>
+                    <span class="text-xs font-bold tracking-wide text-sky-200 uppercase">System V2.0 Online</span>
                 </div>
 
                 <h1 class="font-display text-6xl md:text-8xl font-extrabold text-white mb-8 tracking-tight leading-[0.95]">
@@ -247,14 +246,13 @@
                     <span class="text-holo">Time & Tasks</span>
                 </h1>
                 
-                <p class="text-xl md:text-2xl text-purple-200/70 font-light mb-12 max-w-3xl mx-auto leading-relaxed">
+                <p class="text-xl md:text-2xl text-blue-200/70 font-light mb-12 max-w-3xl mx-auto leading-relaxed">
                     Elevate Your Team with Track Lively. <br class="hidden md:block"/>
                     Streamline workflows, improve productivity and monitor performance.
                 </p>
 
                 <div class="flex flex-col sm:flex-row gap-3 justify-center max-w-lg mx-auto mb-20">
-                
-                    <button class="px-8 py-4 rounded-2xl bg-holo-gradient text-white font-bold text-lg hover:shadow-[0_0_30px_rgba(236,72,153,0.5)] transition-all transform hover:scale-105">
+                    <button class="px-8 py-4 rounded-2xl bg-holo-gradient text-white font-bold text-lg hover:shadow-[0_0_30px_rgba(14,165,233,0.5)] transition-all transform hover:scale-105">
                         Get Started
                     </button>
                 </div>
@@ -310,7 +308,7 @@
             </div>
 
             <div class="max-w-xl" data-aos="fade-left">
-                <h2 class="font-display text-5xl md:text-6xl font-bold text-white mb-6">Free <span class="text-pink-500">Forever.</span></h2>
+                <h2 class="font-display text-5xl md:text-6xl font-bold text-white mb-6">Free <span class="text-sky-500">Forever.</span></h2>
                 <p class="text-xl text-gray-400 mb-10">
                     Get robust features for individuals and small teams. No credit card required.
                 </p>
@@ -346,7 +344,7 @@
                     </div>
                 </div>
                 
-                <a href="#signup" class="text-white border-b-2 border-pink-500 pb-1 hover:text-pink-400 transition-colors font-bold text-lg tracking-wide">
+                <a href="#signup" class="text-white border-b-2 border-sky-500 pb-1 hover:text-sky-400 transition-colors font-bold text-lg tracking-wide">
                     Create Free Account <i class="fa-solid fa-arrow-right ml-2"></i>
                 </a>
             </div>
@@ -355,7 +353,7 @@
 
     <section class="py-10 border-y border-white/5 bg-cosmic-bg relative z-20">
         <div class="max-w-7xl mx-auto px-6 text-center">
-            <p class="font-display text-sm font-semibold uppercase tracking-widest text-purple-400/50 mb-8">Powering Next-Gen Teams</p>
+            <p class="font-display text-sm font-semibold uppercase tracking-widest text-blue-400/50 mb-8">Powering Next-Gen Teams</p>
             <div class="flex flex-wrap justify-center gap-12 md:gap-20 opacity-40 hover:opacity-100 transition-opacity duration-500">
                 <i class="fa-brands fa-slack text-4xl text-white"></i>
                 <i class="fa-brands fa-trello text-4xl text-white"></i>
@@ -369,16 +367,16 @@
         <div class="max-w-7xl mx-auto px-6 relative z-10">
             <div class="flex flex-col lg:flex-row items-center gap-20">
                 <div class="lg:w-1/2" data-aos="fade-right">
-                    <div class="text-pink-500 font-bold mb-4 flex items-center gap-2"><i class="fa-solid fa-stopwatch"></i> <span>Precision Tracking</span></div>
+                    <div class="text-sky-500 font-bold mb-4 flex items-center gap-2"><i class="fa-solid fa-stopwatch"></i> <span>Precision Tracking</span></div>
                     <h2 class="font-display text-5xl text-white font-bold mb-6">Track Every <br/><span class="text-holo">Second</span></h2>
-                    <p class="text-purple-200/80 text-xl mb-8">Accurately track time spent on each task and project. Whether you are billing clients or managing internal efficiency, our timer is your source of truth.</p>
-                    <div class="glass-panel p-6 rounded-2xl border-l-4 border-pink-500">
+                    <p class="text-blue-200/80 text-xl mb-8">Accurately track time spent on each task and project. Whether you are billing clients or managing internal efficiency, our timer is your source of truth.</p>
+                    <div class="glass-panel p-6 rounded-2xl border-l-4 border-sky-500">
                         <h4 class="text-white font-bold text-lg mb-2">Smart Idle Detection</h4>
                         <p class="text-sm text-gray-400">Automatically detects when an employee is idle and prompts them to resume work, ensuring 100% accurate time tracking without false positives.</p>
                     </div>
                 </div>
                 <div class="lg:w-1/2" data-aos="zoom-in">
-                    <div class="relative rounded-[2rem] border border-white/10 overflow-hidden shadow-2xl bg-[#1A182E]"><img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=1630&q=80" class="w-full opacity-80"></div>
+                    <div class="relative rounded-[2rem] border border-white/10 overflow-hidden shadow-2xl bg-[#1A182E]"><img src="https://res.cloudinary.com/du42kbmmn/image/upload/v1765976424/WhatsApp_Image_2025-12-17_at_5.19.09_PM_az8ptz.png" class="w-full opacity-80"></div>
                 </div>
             </div>
         </div>
@@ -388,9 +386,9 @@
         <div class="max-w-7xl mx-auto px-6 relative z-10">
             <div class="flex flex-col lg:flex-row-reverse items-center gap-20">
                 <div class="lg:w-1/2" data-aos="fade-left">
-                    <div class="text-purple-500 font-bold mb-4 flex items-center gap-2"><i class="fa-solid fa-eye"></i> <span>Visual Proof</span></div>
+                    <div class="text-blue-500 font-bold mb-4 flex items-center gap-2"><i class="fa-solid fa-eye"></i> <span>Visual Proof</span></div>
                     <h2 class="font-display text-5xl text-white font-bold mb-6">Real-Time <br/><span class="text-white">Screen Capturing</span></h2>
-                    <p class="text-purple-200/80 text-xl mb-8">Monitor employee activities with live random screen capturing. Admins can verify work progress instantly.</p>
+                    <p class="text-blue-200/80 text-xl mb-8">Monitor employee activities with live random screen capturing. Admins can verify work progress instantly.</p>
                     <ul class="space-y-4">
                         <li class="flex items-center gap-3 text-gray-300"><i class="fa-solid fa-check text-green-400"></i> Live View Dashboard</li>
                         <li class="flex items-center gap-3 text-gray-300"><i class="fa-solid fa-check text-green-400"></i> Randomized Intervals</li>
@@ -398,7 +396,7 @@
                     </ul>
                 </div>
                 <div class="lg:w-1/2" data-aos="zoom-in">
-                    <div class="relative rounded-[2rem] border border-white/10 overflow-hidden shadow-2xl bg-[#1A182E]"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" class="w-full opacity-80"></div>
+                    <div class="relative rounded-[2rem] border border-white/10 overflow-hidden shadow-2xl bg-[#1A182E]"><img src="https://res.cloudinary.com/du42kbmmn/image/upload/v1765976408/Real_time_Screen_Capturing_pggvg1.png" class="w-full opacity-80"></div>
                 </div>
             </div>
         </div>
@@ -410,14 +408,14 @@
                 <div class="lg:w-1/2" data-aos="fade-right">
                     <div class="text-blue-500 font-bold mb-4 flex items-center gap-2"><i class="fa-solid fa-list-check"></i> <span>Project Management</span></div>
                     <h2 class="font-display text-5xl text-white font-bold mb-6">Orchestrate <br/><span class="text-holo">Your Workflow</span></h2>
-                    <p class="text-purple-200/80 text-xl mb-8">Create, assign and track tasks across multiple projects. Visualize progress and hit deadlines.</p>
+                    <p class="text-blue-200/80 text-xl mb-8">Create, assign and track tasks across multiple projects. Visualize progress and hit deadlines.</p>
                     <div class="grid grid-cols-2 gap-4">
                         <div class="glass-panel p-4 rounded-xl text-center"><i class="fa-brands fa-trello text-3xl text-white mb-2"></i><div class="text-sm text-gray-400">Kanban View</div></div>
                         <div class="glass-panel p-4 rounded-xl text-center"><i class="fa-solid fa-list text-3xl text-white mb-2"></i><div class="text-sm text-gray-400">List View</div></div>
                     </div>
                 </div>
                 <div class="lg:w-1/2" data-aos="zoom-in">
-                    <div class="relative rounded-[2rem] border border-white/10 overflow-hidden shadow-2xl bg-[#1A182E]"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1630&q=80" class="w-full opacity-80"></div>
+                    <div class="relative rounded-[2rem] border border-white/10 overflow-hidden shadow-2xl bg-[#1A182E]"><img src="https://res.cloudinary.com/du42kbmmn/image/upload/v1765976386/Orchesrate_work_flow_zhvqqe.png" class="w-full opacity-80"></div>
                 </div>
             </div>
         </div>
@@ -427,22 +425,28 @@
         <div class="max-w-7xl mx-auto px-6 relative z-10">
             <div class="flex flex-col lg:flex-row-reverse items-center gap-20">
                 <div class="lg:w-1/2" data-aos="fade-left">
-                    <div class="text-yellow-500 font-bold mb-4 flex items-center gap-2"><i class="fa-solid fa-chart-line"></i> <span>Analytics</span></div>
+                    <div class="text-lime-400 font-bold mb-4 flex items-center gap-2"><i class="fa-solid fa-chart-line"></i> <span>Analytics</span></div>
                     <h2 class="font-display text-5xl text-white font-bold mb-6">Advanced <br/><span class="text-white">Performance Data</span></h2>
-                    <p class="text-purple-200/80 text-xl mb-8">Get in-depth insights into productivity and project status.</p>
+                    <p class="text-blue-200/80 text-xl mb-8">Get in-depth insights into productivity and project status.</p>
                     <div class="space-y-4">
-                        <div class="glass-panel p-4 rounded-xl border-l-4 border-yellow-500">
+                        <div class="glass-panel p-4 rounded-xl border-l-4 border-lime-400">
                             <h4 class="text-white font-bold">Project Activity Timeline</h4>
                             <p class="text-sm text-gray-400">Visual breakdown of team effort on specific projects.</p>
                         </div>
-                        <div class="glass-panel p-4 rounded-xl border-l-4 border-yellow-500">
+                        <div class="glass-panel p-4 rounded-xl border-l-4 border-lime-400">
                             <h4 class="text-white font-bold">Personal Timeline</h4>
                             <p class="text-sm text-gray-400">Individual performance metrics and activity trends.</p>
                         </div>
                     </div>
                 </div>
                 <div class="lg:w-1/2" data-aos="zoom-in">
-                    <div class="relative rounded-[2rem] border border-white/10 overflow-hidden shadow-2xl bg-[#1A182E]"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" class="w-full opacity-80"></div>
+                    <div class="relative rounded-[2rem] border border-white/10 overflow-hidden shadow-2xl bg-[#1A182E] aspect-video">
+                        <div id="apd-slider" class="flex h-full transition-transform duration-1000 ease-in-out">
+                            <img src="https://res.cloudinary.com/du42kbmmn/image/upload/e_gen_restore/v1765973800/APD_1_epmdwn.jpg" class="w-full h-full object-contain opacity-80 flex-shrink-0">
+                            <img src="https://res.cloudinary.com/du42kbmmn/image/upload/e_gen_restore/v1765973681/APD_2_chmhg4.jpg" class="w-full h-full object-contain opacity-80 flex-shrink-0">
+                            <img src="https://res.cloudinary.com/du42kbmmn/image/upload/e_gen_restore/v1765973681/APD_3_dbl2fg.jpg" class="w-full h-full object-contain opacity-80 flex-shrink-0">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -454,7 +458,7 @@
                 <div class="lg:w-1/2" data-aos="fade-right">
                     <div class="text-green-500 font-bold mb-4 flex items-center gap-2"><i class="fa-solid fa-clock-rotate-left"></i> <span>History</span></div>
                     <h2 class="font-display text-5xl text-white font-bold mb-6">Activity <br/><span class="text-holo">Time Logs</span></h2>
-                    <p class="text-purple-200/80 text-xl mb-8">Comprehensive historical data for billing and auditing. Filter tasks and times logged by specific durations.</p>
+                    <p class="text-blue-200/80 text-xl mb-8">Comprehensive historical data for billing and auditing. Filter tasks and times logged by specific durations.</p>
                     <div class="grid grid-cols-2 gap-4">
                         <div class="glass-panel p-4 rounded-xl text-center"><div class="text-2xl font-bold text-white">Weekly</div><div class="text-xs text-gray-400">7 Days Log</div></div>
                         <div class="glass-panel p-4 rounded-xl text-center"><div class="text-2xl font-bold text-white">Bi-Weekly</div><div class="text-xs text-gray-400">15 Days Log</div></div>
@@ -463,7 +467,7 @@
                     </div>
                 </div>
                 <div class="lg:w-1/2" data-aos="zoom-in">
-                    <div class="relative rounded-[2rem] border border-white/10 overflow-hidden shadow-2xl bg-[#1A182E]"><img src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?ixlib=rb-4.0.3&auto=format&fit=crop&w=2068&q=80" class="w-full opacity-80"></div>
+                    <div class="relative rounded-[2rem] border border-white/10 overflow-hidden shadow-2xl bg-[#1A182E]"><img src="https://res.cloudinary.com/du42kbmmn/image/upload/v1765976442/Activity_Log_gbuaef.png" class="w-full opacity-80"></div>
                 </div>
             </div>
         </div>
@@ -473,9 +477,9 @@
         <div class="max-w-7xl mx-auto px-6 relative z-10">
             <div class="flex flex-col lg:flex-row-reverse items-center gap-20">
                 <div class="lg:w-1/2" data-aos="fade-left">
-                    <div class="text-purple-500 font-bold mb-4 flex items-center gap-2"><i class="fa-solid fa-file-invoice-dollar"></i> <span>Financial Engine</span></div>
+                    <div class="text-blue-500 font-bold mb-4 flex items-center gap-2"><i class="fa-solid fa-file-invoice-dollar"></i> <span>Financial Engine</span></div>
                     <h2 class="font-display text-5xl text-white font-bold mb-6">Smart <br/><span class="text-white">Payment Process</span></h2>
-                    <p class="text-purple-200/80 text-xl mb-8">Update payment methods based on time logged. We support manual payment submissions (for non-freelancers) and Admin-controlled direct pay.</p>
+                    <p class="text-blue-200/80 text-xl mb-8">Update payment methods based on time logged. We support manual payment submissions (for non-freelancers) and Admin-controlled direct pay.</p>
                     <div class="flex flex-col gap-4">
                         <div class="glass-panel px-6 py-4 rounded-2xl flex justify-between items-center text-white"><span class="font-bold">Manual Payment Submission</span><i class="fa-solid fa-check text-green-400"></i></div>
                         <div class="glass-panel px-6 py-4 rounded-2xl flex justify-between items-center text-white"><span class="font-bold">Payment History & Logs</span><i class="fa-solid fa-check text-green-400"></i></div>
@@ -495,7 +499,7 @@
                 <div class="lg:w-1/2" data-aos="fade-right">
                     <div class="text-orange-500 font-bold mb-4 flex items-center gap-2"><i class="fa-solid fa-users-gear"></i> <span>Role Management</span></div>
                     <h2 class="font-display text-5xl text-white font-bold mb-6">Separate <br/><span class="text-holo">User Interfaces</span></h2>
-                    <p class="text-purple-200/80 text-xl mb-8">Manage company data independently through specialized dashboards. Interactive profiles ensure you get logs and all information regarding user details.</p>
+                    <p class="text-blue-200/80 text-xl mb-8">Manage company data independently through specialized dashboards. Interactive profiles ensure you get logs and all information regarding user details.</p>
                     <div class="flex flex-wrap gap-3">
                         <span class="px-4 py-2 bg-white/10 rounded-full text-white font-bold border border-white/20">Admin</span>
                         <span class="px-4 py-2 bg-white/10 rounded-full text-white font-bold border border-white/20">Developer</span>
@@ -514,7 +518,7 @@
     <section class="py-32 relative bg-[#0B0A16]">
         <div class="max-w-5xl mx-auto px-6 text-center">
             <h2 class="font-display text-4xl font-bold text-white mb-12">See it in Action</h2>
-            <div class="relative w-full aspect-video rounded-3xl border border-white/10 shadow-[0_0_100px_rgba(139,92,246,0.3)] overflow-hidden bg-black" data-aos="zoom-in">
+            <div class="relative w-full aspect-video rounded-3xl border border-white/10 shadow-[0_0_100px_rgba(59,130,246,0.3)] overflow-hidden bg-black" data-aos="zoom-in">
                 <iframe class="w-full h-full" src="https://www.youtube.com/embed/dQw4w9WgXcQ?rel=0&modestbranding=1" title="Demo" frameborder="0" allowfullscreen></iframe>
             </div>
         </div>
@@ -536,22 +540,24 @@
                                 <div class="font-display text-2xl font-bold text-white">Free Plan</div>
                                 <div class="text-4xl font-bold text-white mt-4">$0</div>
                             </th>
-                            <th class="p-8 border-b border-purple-500/50 text-center w-1/3 bg-purple-500/10">
-                                <div class="font-display text-2xl font-bold text-purple-300">Paid Plan</div>
+                            <th class="p-8 border-b border-blue-500/50 text-center w-1/3 bg-blue-500/10">
+                                <div class="font-display text-2xl font-bold text-blue-300">Paid Plan</div>
                                 <div class="text-4xl font-bold text-white mt-4">$16<span class="text-lg text-gray-400 font-normal">/mo</span></div>
                             </th>
                         </tr>
                     </thead>
                     <tbody class="text-gray-300 text-sm md:text-base">
-                        <tr class="hover:bg-white/5"><td class="p-6 border-b border-white/5 pl-8 font-bold">Projects</td><td class="p-6 border-b border-white/5 text-center border-r border-white/5">10 Projects</td><td class="p-6 border-b border-white/5 text-center font-bold text-white bg-purple-500/5">Unlimited</td></tr>
-                        <tr class="hover:bg-white/5"><td class="p-6 border-b border-white/5 pl-8 font-bold">Tasks</td><td class="p-6 border-b border-white/5 text-center border-r border-white/5">Unlimited</td><td class="p-6 border-b border-white/5 text-center font-bold text-white bg-purple-500/5">Unlimited + Dependencies</td></tr>
-                        <tr class="hover:bg-white/5"><td class="p-6 border-b border-white/5 pl-8 font-bold">Screenshots</td><td class="p-6 border-b border-white/5 text-center border-r border-white/5">10 Per Day</td><td class="p-6 border-b border-white/5 text-center font-bold text-white bg-purple-500/5">Unlimited + Live View</td></tr>
-                        <tr class="hover:bg-white/5"><td class="p-6 border-b border-white/5 pl-8 font-bold">Desktop App</td><td class="p-6 border-b border-white/5 text-center border-r border-white/5"><i class="fa-solid fa-check text-green-400"></i></td><td class="p-6 border-b border-white/5 text-center font-bold text-white bg-purple-500/5"><i class="fa-solid fa-check text-green-400"></i></td></tr>
-                        <tr class="hover:bg-white/5"><td class="p-6 border-b border-white/5 pl-8 font-bold">Integrations</td><td class="p-6 border-b border-white/5 text-center border-r border-white/5 opacity-50">-</td><td class="p-6 border-b border-white/5 text-center font-bold text-white bg-purple-500/5">Slack, Trello, Google</td></tr>
+                        <tr class="hover:bg-white/5"><td class="p-6 border-b border-white/5 pl-8 font-bold">Projects</td><td class="p-6 border-b border-white/5 text-center border-r border-white/5">10 Projects</td><td class="p-6 border-b border-white/5 text-center font-bold text-white bg-blue-500/5">Unlimited</td></tr>
+                        <tr class="hover:bg-white/5"><td class="p-6 border-b border-white/5 pl-8 font-bold">Tasks</td><td class="p-6 border-b border-white/5 text-center border-r border-white/5">Unlimited</td><td class="p-6 border-b border-white/5 text-center font-bold text-white bg-blue-500/5">Unlimited + Dependencies</td></tr>
+                        <tr class="hover:bg-white/5"><td class="p-6 border-b border-white/5 pl-8 font-bold">Screenshots</td><td class="p-6 border-b border-white/5 text-center border-r border-white/5">10 Per Day</td><td class="p-6 border-b border-white/5 text-center font-bold text-white bg-blue-500/5">Unlimited + Live View</td></tr>
+                        <tr class="hover:bg-white/5"><td class="p-6 border-b border-white/5 pl-8 font-bold">Desktop App</td><td class="p-6 border-b border-white/5 text-center border-r border-white/5"><i class="fa-solid fa-check text-green-400"></i></td><td class="p-6 border-b border-white/5 text-center font-bold text-white bg-blue-500/5"><i class="fa-solid fa-check text-green-400"></i></td></tr>
+                        <tr class="hover:bg-white/5"><td class="p-6 border-b border-white/5 pl-8 font-bold">Integrations</td><td class="p-6 border-b border-white/5 text-center border-r border-white/5 opacity-50">-</td><td class="p-6 border-b border-white/5 text-center font-bold text-white bg-blue-500/5">Slack, Trello, Google</td></tr>
                         <tr>
                             <td class="p-8"></td>
                             <td class="p-8 text-center border-r border-white/5"><button class="px-6 py-3 border border-white/20 rounded-xl hover:bg-white hover:text-black font-bold uppercase text-xs tracking-widest transition-all">Select</button></td>
-                            <td class="p-8 text-center bg-purple-500/10"><button class="px-6 py-3 bg-purple-600 rounded-xl hover:bg-purple-500 text-white font-bold uppercase text-xs tracking-widest transition-all shadow-lg">Upgrade</button></td>
+                            <td class="p-8 text-center bg-blue-500/10">
+                                <button class="px-6 py-3 bg-blue-600 rounded-xl hover:bg-blue-500 text-white font-bold uppercase text-xs tracking-widest transition-all shadow-lg">Upgrade</button>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -583,7 +589,7 @@
     <footer class="bg-black py-20 border-t border-white/10 text-gray-500 text-sm">
         <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
             <div class="flex items-center gap-3">
-                <i class="fa-solid fa-infinity text-purple-500 text-xl"></i>
+                <i class="fa-solid fa-infinity text-blue-500 text-xl"></i>
                 <span class="font-display text-white font-bold text-lg">Track Lively</span>
             </div>
             <div class="flex gap-8">
@@ -669,6 +675,16 @@
                 menuBtn.querySelector('i').classList.add('fa-bars');
             });
         });
+
+        // --- NEW SLIDER LOGIC ---
+        const apdSlider = document.getElementById('apd-slider');
+        let apdIndex = 0;
+        if(apdSlider) {
+            setInterval(() => {
+                apdIndex = (apdIndex + 1) % 3; // 3 images
+                apdSlider.style.transform = `translateX(-${apdIndex * 100}%)`;
+            }, 3000); // 3s total loop
+        }
     </script>
 </body>
 </html>
